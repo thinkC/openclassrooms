@@ -23,37 +23,6 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-// app.post('/api/recipes', (req, res, next) => {
-//     console.log(req.body);
-//     res.status(201).json({
-//         message: 'Thing created successfully!'
-//     });
-// });
-
-// app.post('/api/recipes', (req, res, next) => {
-//     console.log(req.body);
-//     const recipe = new Recipe({
-//         title: req.body.title,
-//         ingredients: req.body.ingredients,
-//         difficulty: req.body.difficulty,
-//         time: req.body.time,
-//         _id: req.body._id
-//     });
-//     recipe.save().then(
-//         () => {
-//             res.status(201).json({
-//                 message: 'Post saved successfully!'
-//             });
-//         }
-//     ).catch(
-//         (error) => {
-//             res.status(400).json({
-//                 error: error
-//             });
-//         }
-//     )
-// });
-
 app.post('/api/recipes', (req, res, next) => {
     console.log(req.body);
     const recipe = new Recipe({
@@ -156,27 +125,5 @@ app.use('/api/recipes', (req, res, next) => {
     )
 })
 
-// app.use('/api/recipes', (req, res, next) => {
-//     const stuff = [
-//         {
-//             _id: 'y67667u',
-//             title: 'Vanilla Birthday Cake',
-//             ingredients: '3 cups (425g/15oz) cake flour,1 whole egg , at room temperature ',
-//             instruction: 'Heat oven to 350 degrees. Butter and line three 6-inch cake pans with parchment paper.',
-//             difficulty: 2,
-//             time: 20,
-//         },
-//         {
-//             _id: 'y676t5r',
-//             title: 'Nigerian Fried Rice',
-//             ingredients: '2 Cups cooked Rice,1 Cup Mixed Vegetables,1 cup Onion diced',
-//             instruction: 'Heat oven to 350 degrees. Butter and line three 6-inch cake pans with parchment paper.',
-//             difficulty: 3,
-//             time: 30,
-//         }
-
-//     ];
-//     res.status(200).json(stuff)
-// })
 
 module.exports = app;
